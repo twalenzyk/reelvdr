@@ -21,8 +21,8 @@ all: reelfpctl
 
 else
    reelfpctl_OBJECTS= reelfpctl.o frontpanel.o frontpanel_rs232.o frontpanel_ice.o frontpanel_usb.o
-LDFLAGS   = -m32
-CXXFLAGS ?= -m32 -O3
+LDFLAGS   = -m64
+CXXFLAGS ?= -m64 -O3
 CXX_STATIC_FLAGS = -static
 CXXFLAGS += -Wno-unused-result -Wno-unused-variable
 
