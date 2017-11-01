@@ -895,7 +895,7 @@ void reset_fake_repeat(struct fake_rep_cmd_t* fake_rep, const ir_cmd_t cmd)
 
 void* ir_send_thread(void* para)
 {
-	int sock=(int)para;
+	int sock=(long)para;
 	ir_cmd_t cmd;
 	int rp=code_w;
 	//char string[256];
