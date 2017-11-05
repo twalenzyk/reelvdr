@@ -51,6 +51,27 @@ elif grep -q 80860709 /proc/bus/pci/devices ; then
                 #we have a AVG frontpanel
                 echo ttyS0 > /dev/.have_frontpanel
 	fi
+elif dmesg | grep H110I-PLUS ; then
+	# ASUS H110I-Plus found
+	# assuming frontpanel is connected to ttyS0
+	#
+	
+	#check if /sbin/reelfpctl is executable
+	[ ! -x /sbin/reelfpctl ] && ! ps ax | grep -v grep | grep avr_flasher && chmod 755 /sbin/reelfpctl
+
+	ln -sfv /dev/ttyS0 /dev/frontpanel
+
+	if ! [ -f /dev/.frontpanel.caps ]; then
+		CAPS=$(reelfpctl -capability)
+		echo $CAPS > /dev/.frontpanel.caps
+	fi
+
+	if ! grep -q AVR /dev/.frontpanel.caps ; then
+		ln -sfv /dev/null /dev/frontpanel
+	else
+                #we have a AVG frontpanel
+                echo ttyS0 > /dev/.have_frontpanel
+	fi
 else
 	# no RB AVG
 	ln -sfv /dev/null /dev/frontpanel
