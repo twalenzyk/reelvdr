@@ -65,6 +65,14 @@
 				<useDefaultCommand>true</useDefaultCommand>
 				<runAllBuilders>true</runAllBuilders>
 			</target>
+			<target name="install" path="utils/reelfpctl" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
+				<buildCommand>sudo</buildCommand>
+				<buildArguments>make</buildArguments>
+				<buildTarget>install</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+				<runAllBuilders>true</runAllBuilders>
+			</target>
 			<target name="all" path="libs/graphlcd-base-0.1.3" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
 				<buildArguments/>
@@ -81,6 +89,14 @@
 				<useDefaultCommand>true</useDefaultCommand>
 				<runAllBuilders>true</runAllBuilders>
 			</target>
+			<target name="install" path="libs/graphlcd-base-0.1.3" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
+				<buildCommand>sudo</buildCommand>
+				<buildArguments>make</buildArguments>
+				<buildTarget>install</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+				<runAllBuilders>true</runAllBuilders>
+			</target>
 			<target name="all" path="utils/reelbox-control" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>make</buildCommand>
 				<buildArguments/>
@@ -95,6 +111,14 @@
 				<buildTarget>clean</buildTarget>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>true</useDefaultCommand>
+				<runAllBuilders>true</runAllBuilders>
+			</target>
+			<target name="install" path="utils/reelbox-control" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
+				<buildCommand>sudo</buildCommand>
+				<buildArguments>make</buildArguments>
+				<buildTarget>install</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
 				<runAllBuilders>true</runAllBuilders>
 			</target>
 			<target name="all" path="libs/graphlcd-base" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
