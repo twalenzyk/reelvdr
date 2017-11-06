@@ -88,7 +88,8 @@ RbMini () {
 }
 
 RbAvg () {
-        grep -q 808627a0 /proc/bus/pci/devices || grep -q 10027910 /proc/bus/pci/devices
+#        grep -q 808627a0 /proc/bus/pci/devices || grep -q 10027910 /proc/bus/pci/devices
+        dmesg | grep H110I-PLUS 
 }
 
 RbIce () {
